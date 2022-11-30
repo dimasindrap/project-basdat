@@ -33,5 +33,10 @@ Route::get('/', function () {
         "title" => "Beranda"
     ]);
 });
+Route::get('/menu', function () {
+    return view('menu' ,[
+        "title" => "menu"
+    ]);
+});
 
 Route::resource('home',adminController::class);

@@ -15,7 +15,11 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->foreignId('menu_id');
+            $table->dateTime('date');
             $table->timestamps();
+            
         });
     }
 

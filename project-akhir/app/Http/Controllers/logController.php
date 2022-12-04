@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\category;
-use App\Models\menu;
+use App\Models\transaction;
 use Illuminate\Http\Request;
 
-
-class adminController extends Controller
+class logController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +14,9 @@ class adminController extends Controller
      */
     public function index()
     {
-        $category = category::all();
-        $menu = menu::all();
-        return view('adminpage.home',[
-            'menu' => $menu,
-            'category' => $category
+        $transaction = transaction::all();
+        return view('adminpage.log',[
+            'transaction' => $transaction
         ]);
     }
 
@@ -31,12 +27,7 @@ class adminController extends Controller
      */
     public function create()
     {
-        $menu = menu::all();
-        $category = category::all();
-        return view('adminpage.create',[
-            'menu' => $menu,
-            'category' => $category
-        ]);
+        //
     }
 
     /**
@@ -47,13 +38,7 @@ class adminController extends Controller
      */
     public function store(Request $request)
     {
-        $menu = new menu;
-        $menu->name = $request->name;
-        $menu->image = $request->image;
-        $menu->price = $request->price;
-        $menu->category_id = $request->category_id;
-        $menu->save();
-        return redirect('home');
+        //
     }
 
     /**
@@ -75,13 +60,7 @@ class adminController extends Controller
      */
     public function edit($id)
     {
-        $menu = menu::find($id);
-        $category = category::all();
-        return view('adminpage.edit',[
-            'menu' => $menu,
-            'category' => $category
-
-        ]);
+        //
     }
 
     /**
@@ -93,14 +72,7 @@ class adminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $menu = menu::find($id);
-        // $menu->category_id = $request->category_id
-        // $menu->nama = $request->nama;
-        $menu->name = $request->name;
-        $menu->image = $request->image;
-        $menu->price = $request->price;
-        $menu->save();
-        return redirect('home');
+        //
     }
 
     /**
@@ -111,8 +83,6 @@ class adminController extends Controller
      */
     public function destroy($id)
     {
-        $menu = menu::find($id);
-        $menu-> delete();
-        return redirect('home');
+        //
     }
 }

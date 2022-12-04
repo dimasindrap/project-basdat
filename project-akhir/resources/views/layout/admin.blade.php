@@ -12,9 +12,12 @@
     <link rel="stylesheet" href="./admin.css">
 
     <title>home</title>
+
+    
 </head>
 
 <body>
+    @include('partial.navbarAdmin')
     <div class="container mt-5">
         @yield('admin_container')
     </div>

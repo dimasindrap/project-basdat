@@ -15,7 +15,7 @@
 
                 <!-- TOMBOL TAMBAH DATA -->
                 <div class="pb-3">
-                  <a href="{{ url('home/create') }}" class="btn btn-primary">+ Tambah Data</a>
+                  <a href="{{ url('category/create') }}" class="btn btn-primary">+ Tambah Data</a>
                 </div>
 
                 <table class="table table-striped">
@@ -23,20 +23,15 @@
                         <tr>
                             <th class="col-md-1">No</th>
                             <th class="col-md-2">Nama</th>
-                            <th class="col-md-2">Gambar</th>
-                            <th class="col-md-4">Kategori</th>
-                            <th class="col-md-4">Harga</th>
+                            
                         </tr>
                     </thead>
-                    @foreach($menu as $p)
+                    @foreach($category as $p)
                     <tr>
                         <td>{{ $p->id}}</td>
-                        <td>{{ $p->name }}</td>
-                        <td>{{ $p->image }}</td>
-                        <td>{{ $p->category_id}}</td>
-                        <td>{{ $p->price }}</td>
+                        <td>{{ $p->nama }}</td>
                         <td>
-                            <a href='{{ url('home/'.$p->id.'/edit') }}' class="btn btn-warning btn-sm">Edit</a>
+                            <a href='{{ url('category/'.$p->id.'/edit') }}' class="btn btn-warning btn-sm">Edit</a>
                             {{-- <a href='' class="btn btn-danger btn-sm">Del</a> --}}
                             <form action="{{ url('home/'. $p->id) }}" method="POST">
                                 @csrf

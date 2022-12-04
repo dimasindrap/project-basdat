@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\logController;
+use App\Http\Controllers\categoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,7 +30,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/', function () {
+Route::get('/beranda', function () {
     return view('beranda' ,[
         "title" => "Beranda"
     ]);
@@ -38,5 +40,19 @@ Route::get('/menu', function () {
         "title" => "menu"
     ]);
 });
+Route::get('/cart', function () {
+    return view('cart' ,[
+        "title" => "cart"
+    ]);
+});
+// Route::get('/log', function () {
+//     return view('log' ,[
+//         "title" => "log"
+//     ]);
+// });
+
+
 
 Route::resource('home',adminController::class);
+Route::resource('category',categoryController::class);
+Route::resource('log',logController::class);

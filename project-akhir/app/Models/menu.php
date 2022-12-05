@@ -4,17 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use  App\Models\category;
+use  App\Models\Category;
 
-class menu extends Model
+class Menu extends Model
 {
     use HasFactory;
         
-        protected $guarded = ['$id'];
+        protected $guarded = ['id'];
 
-        public function menu()
+        public function categories()
         { 
-            return $this->belongsTo(category::class); 
+            return $this->belongsToMany(Category::class); 
         }
         
         

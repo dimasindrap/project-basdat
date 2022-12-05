@@ -26,15 +26,19 @@
                 <label for="category" class="col-sm-2 col-form-label">Kategori</label>
                 <div class="input-group-prepend">
                 
-            </div>
-                    <select nama="category_id" class="col-sm-10" id="inputGroupSelect01" >
-                        @foreach($category as $item)
-                        <option @if ($menu->category_id == $item->id) selected="selected" @endif
-                            value="{{ $item->id }}">
-                            {{ $item->nama }}</option>
-                            @endforeach
-                    </select>
                 </div>
+                @foreach($category as $c)
+
+                <div class="form-check">
+                    <input name="categories[]" class="form-check-input" type="checkbox" value="{{ $c->id }}" id="{{  $c->id }}">
+                    <label class="form-check-label" for="flexCheckIndeterminate">
+                        {{  $c->nama  }}
+                    </label>
+                  </div>
+
+
+                  @endforeach
+              </div>
 
             <div class="mb-3 row">
                 <label for="harga" class="col-sm-2 col-form-label">Harga</label>

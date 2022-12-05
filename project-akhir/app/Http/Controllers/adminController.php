@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\category;
-use App\Models\menu;
+use App\Models\Category;
+use App\Models\Menu;
 use Illuminate\Http\Request;
 
 
-class adminController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class adminController extends Controller
      */
     public function index()
     {
-        $category = category::all();
-        $menu = menu::all();
+        $category = Category::all();
+        $menu = Menu::all();
         return view('adminpage.home',[
             'menu' => $menu,
             'category' => $category
@@ -31,8 +31,8 @@ class adminController extends Controller
      */
     public function create()
     {
-        $menu = menu::all();
-        $category = category::all();
+        $menu = Menu::all();
+        $category = Category::all();
         return view('adminpage.create',[
             'menu' => $menu,
             'category' => $category
@@ -47,12 +47,17 @@ class adminController extends Controller
      */
     public function store(Request $request)
     {
-        $menu = new menu;
+        $menu = new Menu;
         $menu->name = $request->name;
         $menu->image = $request->image;
         $menu->price = $request->price;
-        $menu->category_id = $request->category_id;
+        $menu->category_id = 1;
         $menu->save();
+
+        $menu->categories()->attach(
+            $request->categories
+        );
+
         return redirect('home');
     }
 
@@ -75,12 +80,13 @@ class adminController extends Controller
      */
     public function edit($id)
     {
-        $menu = menu::find($id);
+        $menu = Menu::find($id);
         $category = category::all();
         return view('adminpage.edit',[
             'menu' => $menu,
             'category' => $category
 
+            
         ]);
     }
 
@@ -93,13 +99,18 @@ class adminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $menu = menu::find($id);
+        $menu = Menu::find($id);
         // $menu->category_id = $request->category_id
         // $menu->nama = $request->nama;
         $menu->name = $request->name;
         $menu->image = $request->image;
         $menu->price = $request->price;
+        $menu->category_id = 1;
         $menu->save();
+
+        $menu->categories()->sync(
+            $request->categories
+        );
         return redirect('home');
     }
 
@@ -111,7 +122,7 @@ class adminController extends Controller
      */
     public function destroy($id)
     {
-        $menu = menu::find($id);
+        $menu = Menu::find($id);
         $menu-> delete();
         return redirect('home');
     }

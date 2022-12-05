@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\transaction;
 use Illuminate\Http\Request;
 
-class logController extends Controller
+class LogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class logController extends Controller
      */
     public function index()
     {
-        $transaction = transaction::all();
+        $transaction = Transaction::all();
         return view('adminpage.log',[
             'transaction' => $transaction
         ]);

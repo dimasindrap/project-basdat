@@ -1,6 +1,7 @@
 @extends('layout.admin')
 
 @section('admin_container')
+@include('partial.navbarAdmin')
             <!-- START DATA -->
             <div class="my-5 p-5 bg-body rounded shadow-sm">
                 <div class="row position-relative">
@@ -33,7 +34,12 @@
                         <td>{{ $p->id}}</td>
                         <td>{{ $p->name }}</td>
                         <td>{{ $p->image }}</td>
-                        <td>{{ $p->category_id}}</td>
+                        <td>
+                    @foreach($p->categories as $node)
+                        
+                            {{ $node->nama}}, 
+                    @endforeach
+                        </td>
                         <td>{{ $p->price }}</td>
                         <td>
                             <a href='{{ url('home/'.$p->id.'/edit') }}' class="btn btn-warning btn-sm">Edit</a>
@@ -44,6 +50,7 @@
                                 <button class="btn btn-danger btn-sm">Delete</button>
                         </td>
                     </tr>
+                    
                     @endforeach
                 </table>
 

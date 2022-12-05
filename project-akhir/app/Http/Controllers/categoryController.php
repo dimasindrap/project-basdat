@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\category;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class categoryController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class categoryController extends Controller
      */
     public function index()
     {
-        $category = category::all();
+        $category = Category::all();
         return view('adminpage.category',[
             'category' => $category
         ]);
@@ -27,7 +27,7 @@ class categoryController extends Controller
      */
     public function create()
     {
-        $category = category::all();
+        $category = Category::all();
         return view('adminpage.createcategory',[
             'category' => $category
         ]);
@@ -41,7 +41,7 @@ class categoryController extends Controller
      */
     public function store(Request $request)
     {
-        $category = new category;
+        $category = new Category;
         $category->nama = $request->nama;
         $category->save();
         return redirect('category');
@@ -66,7 +66,7 @@ class categoryController extends Controller
      */
     public function edit($id)
     {
-        $category = category::all();
+        $category = Category::all();
         return view('adminpage.editcategory',[
             'category' => $category
         ]);
@@ -81,7 +81,7 @@ class categoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $category = category::find($id);
+        $category = Category::find($id);
         $category->nama = $request->nama;
         $category->save();
         return redirect('category');
@@ -95,7 +95,7 @@ class categoryController extends Controller
      */
     public function destroy($id)
     {
-        $category = category::find($id);
+        $category = Category::find($id);
         $category-> delete();
         return redirect('category');
     }

@@ -1,6 +1,7 @@
 @extends('layout.admin')
 
 @section('admin_container')
+@include('partial.navbarAdmin')
             <!-- START DATA -->
             <div class="my-5 p-5 bg-body rounded shadow-sm">
                 <div class="row position-relative">

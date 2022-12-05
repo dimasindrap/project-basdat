@@ -1,6 +1,7 @@
 @extends('layout.admin')
 
 @section('admin_container')
+@include('partial.navbarAdmin')
 
 <div class="pb-3">
   <form class="d-flex" action="" method="get">

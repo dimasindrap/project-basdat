@@ -25,11 +25,18 @@
                 <div class="input-group-prepend">
                 
                 </div>
-                <select class="col-sm-10" id="inputGroupSelect01" name="category_id">
-                  <option selected>Pilih..</option>
-                  <option value="1">Makanan</option>
-                  <option value="2">Minuman</option>
-                </select>
+                @foreach($category as $c)
+
+                <div class="form-check">
+                    <input name="categories[]" class="form-check-input" type="checkbox" value="{{ $c->id }}" id="{{  $c->id }}">
+                    <label class="form-check-label" for="flexCheckIndeterminate">
+                        {{  $c->nama  }}
+                    </label>
+                  </div>
+
+                  <br/>
+
+                  @endforeach
               </div>
             <div class="mb-3 row">
                 <label for="harga" class="col-sm-2 col-form-label">Harga</label>

@@ -2,7 +2,7 @@
 
 @section('admin_container')
      <!-- START FORM -->
-     <form action='{{ url('home/'.$menu->id) }}' method='POST'>
+     <form action='{{ url('home/'.$menu->id) }}' method='POST' enctype="multipart/form-data">
     @csrf
     <input type="hidden" name="_method" value="PATCH">
         <div class="my-3 p-3 bg-body rounded shadow-sm">
@@ -18,7 +18,7 @@
             <div class="mb-3 row">
                 <label for="gambar" class="col-sm-2 col-form-label">Gambar</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name='image' value="{{ $menu->image }}" id="image">
+                    <input type="file" class="form-control" name='image' value="{{ $menu->image }}" id="image">
                 </div>
             </div>
 

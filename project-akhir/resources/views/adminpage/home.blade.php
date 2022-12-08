@@ -33,7 +33,8 @@
                     <tr>
                         <td>{{ $p->id}}</td>
                         <td>{{ $p->name }}</td>
-                        <td>{{ $p->image }}</td>
+                        <td>
+                        <img src="{{ asset('storage/' . $p->image) }}" class="rounded" style="width: :70px; height:70px;"></td>
                         <td>
                     @foreach($p->categories as $node)
                         

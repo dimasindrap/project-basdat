@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Transaction extends Model
 {
     use HasFactory;
-    protected $guarded = ['$id'];
+    protected $guarded = ['id'];
 
-    public function menu()
+    public function menus()
     { 
         return $this->hasOne(User::class); 
     }
-    public function user()
+    public function users()
     { 
         return $this->hasOne(User::class); 
     }

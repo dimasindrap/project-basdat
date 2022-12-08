@@ -49,7 +49,7 @@ class AdminController extends Controller
     {
         $menu = new Menu;
         $menu->name = $request->name;
-        $menu->image = $request->image;
+        $menu->image = $request->file('image')->store("menu-img");
         $menu->price = $request->price;
         $menu->category_id = 1;
         $menu->save();
@@ -103,7 +103,7 @@ class AdminController extends Controller
         // $menu->category_id = $request->category_id
         // $menu->nama = $request->nama;
         $menu->name = $request->name;
-        $menu->image = $request->image;
+        $menu->image = $request->file('image')->store("menu-img");
         $menu->price = $request->price;
         $menu->category_id = 1;
         $menu->save();

@@ -170,14 +170,14 @@
                     <div class="form-outline mb-5">
                         <label class="form-label" for="typeText">Nomor Rekening</label>
                       <input type="text" id="typeText" class="form-control form-control-lg" siez="17"
-                        value="1234 5678 9012 3457" minlength="19" maxlength="19" />
+                        value="" minlength="19" maxlength="19" />
                       
                     </div>
   
                     <div class="form-outline mb-5">
                         <label class="form-label" for="typeName">Atas Nama</label>
                       <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
-                        value="John Smith" />
+                        value="" />
                     </div>
   
   

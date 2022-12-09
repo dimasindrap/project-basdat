@@ -158,39 +158,10 @@
                   <div class="d-flex justify-content-between p-2 mb-2" style="background-color: #e1f5fe;">
                     <h5 class="fw-bold mb-0">Total:</h5>
                     <h5 class="fw-bold mb-0">2261$</h5>
+                    
+                    <a class="btn btn-primary btn-block btn-lg" href="/cart/payment">Buy</a>
                   </div>
-  
-                </div>
-                <div class="col-lg-6 px-5 py-4">
-  
-                  <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Payment</h3>
-  
-                  <form class="mb-5">
-  
-                    <div class="form-outline mb-5">
-                        <label class="form-label" for="typeText">Nomor Rekening</label>
-                      <input type="text" id="typeText" class="form-control form-control-lg" siez="17"
-                        value="" minlength="19" maxlength="19" />
-                      
-                    </div>
-  
-                    <div class="form-outline mb-5">
-                        <label class="form-label" for="typeName">Atas Nama</label>
-                      <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
-                        value="" />
-                    </div>
-  
-  
-                    <p class="mb-5">Harap simpan resi pembayaran, sebagai bukti pembayaran.</p>
-  
-                    <button type="button" class="btn btn-primary btn-block btn-lg">Buy now</button>
-  
-                    <h5 class="fw-bold mb-5" style="position: absolute; bottom: 0;">
-                      <a href="menu"><i class="fas fa-angle-left me-2"></i>Back to shopping</a>
-                    </h5>
-  
-                  </form>
-  
+                  <a href="menu"><i class="fas fa-angle-left me-2"></i>Back to shopping</a>
                 </div>
               </div>
   

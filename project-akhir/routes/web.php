@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\adminController;
+use App\Http\Controllers\MenuAdminController;
 use App\Http\Controllers\logController;
 use App\Http\Controllers\categoryController;
 use App\Http\Controllers\ProfileController;
@@ -45,6 +45,16 @@ Route::get('/cart', function () {
         "title" => "cart"
     ]);
 });
+Route::get('/cart/payment', function () {
+    return view('payment' ,[
+        "title" => "payment"
+    ]);
+});
+Route::get('/riwayat', function () {
+    return view('RiwayatTransaksi' ,[
+        "title" => "Riwayat"
+    ]);
+});
 // Route::get('/log', function () {
 //     return view('log' ,[
 //         "title" => "log"
@@ -53,6 +63,6 @@ Route::get('/cart', function () {
 
 
 
-Route::resource('home',adminController::class);
+Route::resource('home',MenuAdminController::class);
 Route::resource('category',categoryController::class);
 Route::resource('log',logController::class);

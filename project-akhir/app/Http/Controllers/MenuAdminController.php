@@ -6,18 +6,27 @@ use App\Models\Category;
 use App\Models\Menu;
 use Illuminate\Http\Request;
 
-
-class AdminController extends Controller
+class MenuAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $category = Category::all();
-        $menu = Menu::all();
+        // if($request->has('search')){
+        //     $menu = Menu::where('name', 'LIKE', '%' . $request->search . '%')
+        //         ->orWhere('id', 'LIKE', '%' . $request->search . '%')
+        //         ->orWhereHas('category_id', function ($query) use ($request) {
+        //             $query->where('name', 'LIKE', '%' . $request->search . '%');
+        //     })
+        //     ->paginate(5);
+        // }else{
+        //     $menu=Menu::paginate(5);
+        // }
+        $menu = Menu::paginate(5);
         return view('adminpage.home',[
             'menu' => $menu,
             'category' => $category

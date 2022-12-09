@@ -8,8 +8,8 @@
                    
                 <!-- FORM PENCARIAN -->
                 <div class="pb-3">
-                  <form class="d-flex" action="" method="get">
-                      <input class="form-control me-1" type="search" name="keyword" value="{{ Request::get('keyword') }}" placeholder="input keyword" aria-label="Search">
+                  <form class="d-flex" action="/home" method="GET">
+                      <input class="form-control me-1" type="search" name="search" placeholder="input keyword" aria-label="Search">
                       <button class="btn btn-secondary" type="submit">Cari</button>
                   </form>
                 </div>
@@ -22,7 +22,7 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th class="col-md-1">No</th>
+                            <th class="col-md-1">Id</th>
                             <th class="col-md-2">Nama</th>
                             <th class="col-md-2">Gambar</th>
                             <th class="col-md-4">Kategori</th>
@@ -54,7 +54,7 @@
                     
                     @endforeach
                 </table>
-
+{{ $menu ->links() }}
           </div>
           <!-- AKHIR DATA -->
 

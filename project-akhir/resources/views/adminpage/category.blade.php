@@ -22,7 +22,7 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th class="col-md-1">No</th>
+                            <th class="col-md-1">Id</th>
                             <th class="col-md-2">Nama</th>
                             
                         </tr>

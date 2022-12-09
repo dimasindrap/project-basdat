@@ -1,7 +1,6 @@
-@extends('layout.admin')
+@extends('layout.main')
 
-@section('admin_container')
-@include('partial.navbarAdmin')
+@section('container')
 
 <div class="pb-3">
   <form class="d-flex" action="" method="get">
@@ -14,9 +13,9 @@
     <thead class="bg-light">
       <tr>
         <th>Nama</th>
-        <th>Id</th>
-        <th></th>
         <th>Email</th>
+        <th>Total</th>
+        <th>Tanggal</th>
       </tr>
     </thead>
     <tbody>
@@ -31,7 +30,6 @@
                 />
             <div class="ms-3">
               <p class="fw-bold mb-1">Nama</p>
-            
             </div>
           </div>
         </td>
@@ -41,10 +39,8 @@
         <td>
           <span class="badge badge-success rounded-pill d-inline">Active</span>
         </td>
-        <td>xx/xx/xx</td>
-        <td>
-         
-        </td>
+        <td>@Email</td>
+        
       </tr>
      <tr>
         <td>
@@ -57,7 +53,6 @@
                 />
             <div class="ms-3">
               <p class="fw-bold mb-1">Nama</p>
-              
             </div>
           </div>
         </td>
@@ -67,9 +62,7 @@
         <td>
           <span class="badge badge-success rounded-pill d-inline">Active</span>
         </td>
-        <td>xx/xx/xx</td>
-        <td>      
-        </td>
+        <td>@Email</td>
       </tr>
     </tbody>
   </table>

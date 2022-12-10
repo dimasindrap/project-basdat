@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\transaction;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class LogController extends Controller
+class LogUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class LogController extends Controller
      */
     public function index()
     {
-        $transaction = Transaction::all();
-        return view('adminpage.log',[
-            'transaction' => $transaction
+        $user = User::all();
+        return view('adminpage.logUser',[
+            'user' => $user
         ]);
     }
 

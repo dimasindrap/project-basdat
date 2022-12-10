@@ -21,6 +21,17 @@
           value="" />
       </div>
 
+      <div class="form-outline mb-5">
+        <label class="form-label" for="typeName">Bukti Transfer</label>
+      <input type="file" id="typeName" class="form-control form-control-lg" siez="17"
+        value="" />
+    </div>
+    <div class="form-outline mb-5">
+      <label class="form-label" for="typeName">Alamat</label>
+    <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+      value="" />
+  </div>
+
 
       <button type="button" class="btn btn-primary btn-block btn-lg">Buy now</button>
 

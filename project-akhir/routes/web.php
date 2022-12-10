@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\MenuAdminController;
-use App\Http\Controllers\logController;
+use App\Http\Controllers\LogUserController;
 use App\Http\Controllers\categoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+return view('dashboard');   
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -30,31 +30,36 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+Route::get('/', function () {
+    return view('beranda' ,[
+        "title" => "beranda"
+    ]);
+})->middleware(['auth']);;
 Route::get('/beranda', function () {
     return view('beranda' ,[
         "title" => "Beranda"
     ]);
-});
+})->middleware(['auth']);;
 Route::get('/menu', function () {
     return view('menu' ,[
         "title" => "menu"
     ]);
-});
+})->middleware(['auth']);;
 Route::get('/cart', function () {
     return view('cart' ,[
         "title" => "cart"
     ]);
-});
+})->middleware(['auth']);;
 Route::get('/cart/payment', function () {
     return view('payment' ,[
         "title" => "payment"
     ]);
-});
+})->middleware(['auth']);;
 Route::get('/riwayat', function () {
     return view('RiwayatTransaksi' ,[
         "title" => "Riwayat"
     ]);
-});
+})->middleware(['auth']);;
 // Route::get('/log', function () {
 //     return view('log' ,[
 //         "title" => "log"
@@ -63,6 +68,6 @@ Route::get('/riwayat', function () {
 
 
 
-Route::resource('home',MenuAdminController::class);
-Route::resource('category',categoryController::class);
-Route::resource('log',logController::class);
+Route::resource('home',MenuAdminController::class)->middleware(['auth']);
+Route::resource('category',categoryController::class)->middleware(['auth']);
+Route::resource('log',logUserController::class)->middleware(['auth']);

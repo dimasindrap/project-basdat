@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('transaction_id');
-            $table->string('payment_method');
+            $table->string('bukti_bayar');
             $table->timestamps();
         });
     }

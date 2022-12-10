@@ -2,12 +2,6 @@
 
 @section('container')
 
-<div class="pb-3">
-  <form class="d-flex" action="" method="get">
-      <input class="form-control me-1" type="search" name="keyword" value="{{ Request::get('keyword') }}" placeholder="input keyword" aria-label="Search">
-      <button class="btn btn-secondary" type="submit">Cari</button>
-  </form>
-</div>
 
 <table class="table align-middle mb-0 bg-white">
     <thead class="bg-light">

@@ -11,7 +11,7 @@
             <div class="card-body text-black">
   
               <div class="row">
-                <div class="col-lg-6 px-5 py-4">
+              
   
                   <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Your products</h3>
   
@@ -152,7 +152,11 @@
                       </div>
                     </div>
                   </div>
-  
+                  <div class="form-outline mb-5">
+                    <label class="form-label" for="typeName">Alamat</label>
+                   <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                    value="" />
+                </div>
                   <hr class="mb-4" style="height: 2px; background-color: #1266f1; opacity: 1;">
   
                   <div class="d-flex justify-content-between p-2 mb-2" style="background-color: #e1f5fe;">
@@ -161,10 +165,11 @@
                     
                     <a class="btn btn-primary btn-block btn-lg" href="/cart/payment">Buy</a>
                   </div>
+                  
                   <a href="menu"><i class="fas fa-angle-left me-2"></i>Back to shopping</a>
                 </div>
               </div>
-  
+              
             </div>
           </div>
         </div>

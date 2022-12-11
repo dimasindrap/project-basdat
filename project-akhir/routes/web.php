@@ -4,6 +4,12 @@ use App\Http\Controllers\MenuAdminController;
 use App\Http\Controllers\LogUserController;
 use App\Http\Controllers\categoryController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\MenuWebController;
+use App\Http\Controllers\RiwayatController;
+use App\Http\Controllers\PaymentController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,44 +36,17 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/', function () {
-    return view('beranda' ,[
-        "title" => "beranda"
-    ]);
-})->middleware(['auth']);;
-Route::get('/beranda', function () {
-    return view('beranda' ,[
-        "title" => "Beranda"
-    ]);
-})->middleware(['auth']);;
-Route::get('/menu', function () {
-    return view('menu' ,[
-        "title" => "menu"
-    ]);
-})->middleware(['auth']);;
-Route::get('/cart', function () {
-    return view('cart' ,[
-        "title" => "cart"
-    ]);
-})->middleware(['auth']);;
-Route::get('/cart/payment', function () {
-    return view('payment' ,[
-        "title" => "payment"
-    ]);
-})->middleware(['auth']);;
-Route::get('/riwayat', function () {
-    return view('RiwayatTransaksi' ,[
-        "title" => "Riwayat"
-    ]);
-})->middleware(['auth']);;
-// Route::get('/log', function () {
-//     return view('log' ,[
-//         "title" => "log"
-//     ]);
-// });
 
 
 
+
+
+
+Route::resource('menu',MenuWebController::class)->middleware(['auth']);
+Route::resource('beranda',BerandaController::class)->middleware(['auth']);
+Route::resource('riwayat',RiwayatController::class)->middleware(['auth']);
+Route::resource('payment',PaymentController::class)->middleware(['auth']);
+Route::resource('cart',CartController::class)->middleware(['auth']);
 Route::resource('home',MenuAdminController::class)->middleware(['auth']);
 Route::resource('category',categoryController::class)->middleware(['auth']);
 Route::resource('log',logUserController::class)->middleware(['auth']);

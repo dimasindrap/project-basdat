@@ -12,9 +12,15 @@ class LogUserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $user = User::all();
+        if($request->has('search')){
+            $user=User::where('name','LIKE','%' .$request->search.'%')
+            ->orWhere('id', 'LIKE', '%' . $request->search . '%')
+            ->paginate(5);
+        }else{
+            $user=User::paginate(5);
+        }
         return view('adminpage.logUser',[
             'user' => $user
         ]);
@@ -83,6 +89,8 @@ class LogUserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user-> delete();
+        return redirect('log');
     }
 }

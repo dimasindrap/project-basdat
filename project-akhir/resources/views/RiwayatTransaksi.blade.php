@@ -7,9 +7,9 @@
     <thead class="bg-light">
       <tr>
         <th>Nama</th>
-        <th>Email</th>
         <th>Total</th>
         <th>Tanggal</th>
+        <th>Nota</th>
       </tr>
     </thead>
     <tbody>

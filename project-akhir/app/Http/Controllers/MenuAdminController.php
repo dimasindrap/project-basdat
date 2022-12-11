@@ -15,18 +15,15 @@ class MenuAdminController extends Controller
      */
     public function index(Request $request)
     {
+        if($request->has('search')){
+            $menu=Menu::where('name','LIKE','%' .$request->search.'%')
+            ->orWhere('id', 'LIKE', '%' . $request->search . '%')
+            ->paginate(5);
+        }else{
+            $menu=Menu::paginate(5);
+           
+        }
         $category = Category::all();
-        // if($request->has('search')){
-        //     $menu = Menu::where('name', 'LIKE', '%' . $request->search . '%')
-        //         ->orWhere('id', 'LIKE', '%' . $request->search . '%')
-        //         ->orWhereHas('category_id', function ($query) use ($request) {
-        //             $query->where('name', 'LIKE', '%' . $request->search . '%');
-        //     })
-        //     ->paginate(5);
-        // }else{
-        //     $menu=Menu::paginate(5);
-        // }
-        $menu = Menu::paginate(5);
         return view('adminpage.home',[
             'menu' => $menu,
             'category' => $category

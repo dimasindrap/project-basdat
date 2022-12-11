@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Transaction;
-use App\Models\User;
-use App\Models\Payment;
 use Illuminate\Http\Request;
+use App\Models\Menu;
 
-class RiwayatController extends Controller
+class MenuWebController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,13 +14,9 @@ class RiwayatController extends Controller
      */
     public function index()
     {
-        $transaction = Transaction::all();
-        $user = User::all();
-        $payment = Payment::all();
-        return view('RiwayatTransaksi',[
-            'transaction' => $transaction,
-            'user' => $user,
-            'payment' => $payment
+        $menu = Menu::all();
+        return view('menu',[
+            'menu' => $menu
         ]);
     }
 

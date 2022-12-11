@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Transaction;
-use App\Models\User;
-use App\Models\Payment;
 use Illuminate\Http\Request;
 
-class RiwayatController extends Controller
+class GoAdminPageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,14 +13,7 @@ class RiwayatController extends Controller
      */
     public function index()
     {
-        $transaction = Transaction::all();
-        $user = User::all();
-        $payment = Payment::all();
-        return view('RiwayatTransaksi',[
-            'transaction' => $transaction,
-            'user' => $user,
-            'payment' => $payment
-        ]);
+        //
     }
 
     /**

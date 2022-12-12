@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Menu;
 
@@ -15,8 +16,11 @@ class MenuWebController extends Controller
     public function index()
     {
         $menu = Menu::all();
+        $category = Category::all();
+
         return view('menu',[
-            'menu' => $menu
+        'menu' => $menu,
+            'category' => $category
         ]);
     }
 

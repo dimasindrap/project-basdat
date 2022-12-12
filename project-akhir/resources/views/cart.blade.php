@@ -4,6 +4,7 @@
 @section('container')
 <section class="h-100 h-custom" style="background-color: #eee;">
   <form action='{{ url('cart') }}' method='post' enctype="multipart/form-data">
+    
     {{-- <div class="container h-100 py-5"> --}}
       {{-- <div class="row d-flex justify-content-center align-items-center h-100"> --}}
         <div class="col">

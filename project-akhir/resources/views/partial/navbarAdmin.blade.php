@@ -12,6 +12,9 @@
 
         <div class="sidebar-item-container d-flex flex-column justify-content-center align-items-center">
 
+            <a href="HomeDashboard" class="sidebar-item" onclick="toggleActive(this)">
+                <img src="./logo/Home.SVG" width="30px" alt="">
+            </a>
             <a href="home" class="sidebar-item" onclick="toggleActive(this)">
                 <img src="./logo/Buy.SVG" width="30px" alt="">
             </a>

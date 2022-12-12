@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Transaction;
 use App\Models\User;
-use App\Models\Payment;
+use App\Models\Category;
+use App\Models\Menu;
 use Illuminate\Http\Request;
 
 class RiwayatController extends Controller
@@ -18,11 +19,12 @@ class RiwayatController extends Controller
     {
         $transaction = Transaction::all();
         $user = User::all();
-        $payment = Payment::all();
+        $category = Category::all();
+        $menu = Menu::all();
         return view('RiwayatTransaksi',[
             'transaction' => $transaction,
             'user' => $user,
-            'payment' => $payment
+            'category' => $category,
         ]);
     }
 
@@ -33,7 +35,10 @@ class RiwayatController extends Controller
      */
     public function create()
     {
-        //
+        $transaction = Transaction::all();
+        return view('RiwayatTransaksi',[
+            'transaction' => $transaction,
+        ]);
     }
 
     /**

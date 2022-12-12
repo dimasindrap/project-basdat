@@ -8,8 +8,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\MenuWebController;
 use App\Http\Controllers\RiwayatController;
-use App\Http\Controllers\PaymentController;
-
+use App\Http\Controllers\HomeDashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +22,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::get('', function () {
+return view('beranda');   
+})
+->middleware(['auth']);
 
 Route::get('/dashboard', function () {
 return view('dashboard');   
@@ -43,6 +47,7 @@ require __DIR__.'/auth.php';
 
 
 Route::resource('menu',MenuWebController::class)->middleware(['auth']);
+Route::resource('HomeDashboard',HomeDashboardController::class)->middleware(['auth']);
 Route::resource('beranda',BerandaController::class)->middleware(['auth']);
 Route::resource('riwayat',RiwayatController::class)->middleware(['auth']);
 Route::resource('payment',PaymentController::class)->middleware(['auth']);

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class GoWebPageController extends Controller
+class HomeDashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,12 @@ class GoWebPageController extends Controller
      */
     public function index()
     {
-        //
+        $jumlahpengguna = User::all()->count();
+        $jumlahmenu = Menu::all()->count();
+        return view('adminpage.HomeDashboard')
+            ->with('jumlahpengguna',$jumlahpengguna)
+            ->with('jumlahmenu',$jumlahmenu);
+
     }
 
     /**

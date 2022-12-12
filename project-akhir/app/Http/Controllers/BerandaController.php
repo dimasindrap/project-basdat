@@ -13,7 +13,7 @@ class BerandaController extends Controller
      */
     public function index()
     {
-        return view('beranda');
+        return view('/beranda');
     }
 
     /**

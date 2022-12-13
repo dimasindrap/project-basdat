@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Transaction;
+use App\Models\Menu;
+// use App\Models\User;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -12,11 +14,16 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $transaction = Transaction::all();
+        // $transaction = Transaction::all();
+        $menu = Menu::find($id);
+        // $user = User::all();
+        dd($menu);
         return view('cart',[
-            'transaction' => $transaction
+            // 'transaction' => $transaction,
+            'menu' => $menu
+            // 'user' => $user
         ]);
     }
 
@@ -27,7 +34,12 @@ class CartController extends Controller
      */
     public function create()
     {
-        //
+        // $menu = Menu::all();
+        // $transaction = Transaction::all();
+        
+        // return view('cart',[
+        //     'transcation' => $transaction
+        // ]);
     }
 
     /**
@@ -38,7 +50,24 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $transaction = new Transaction();
+        // $transaction->address = $request->address;
+        // $transaction->bukti_bayar = $request->file('image')->store("menu-img");
+        // $transaction->save();
+        // return redirect('riwayat');
+        $validatedData = $request->validate([
+            'menu_id' => 'required',
+            'address' => 'required',
+            'image_nota' => 'required',
+            'date' => now() 
+        ]);
+
+        if($request->file('image_nota')){
+            $validatedData['image_nota'] = $request->file('image_nota')->store('trasaksi-img');
+        }
+        Transaction::create($validatedData);
+
+        return redirect('riwayat');
     }
 
     /**
@@ -49,7 +78,15 @@ class CartController extends Controller
      */
     public function show($id)
     {
-        //
+        $menu = Menu::find($id);
+        // $user = User::all();
+        // dd($menu);
+
+        return view('cart',[
+            // 'transaction' => $transaction,
+            'menu' => $menu
+
+        ]);
     }
 
     /**
@@ -60,7 +97,7 @@ class CartController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use  App\Models\Category;
+use  App\Models\Transaction;
 
 class Menu extends Model
 {
@@ -15,6 +16,10 @@ class Menu extends Model
         public function categories()
         { 
             return $this->belongsToMany(Category::class); 
+        }
+
+        public function transaction(){
+            return $this->hasOne(Transaction::class, 'menu_id');
         }
         
         

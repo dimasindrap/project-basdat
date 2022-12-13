@@ -33,8 +33,8 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-2 pt-0 border-top-0 bg-transparent">
-                                {{-- <form action ={{ url('cart',$menu->id) }} method="POST" --}}
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                
+                                <div class="text-center"><a type="submit" class="btn btn-outline-dark mt-auto" href="{{ url('cart/'.$p->id ) }}">Buy</a></div>
                             </div>
                         </div>
                     </div>

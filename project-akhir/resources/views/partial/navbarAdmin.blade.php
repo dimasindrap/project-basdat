@@ -4,7 +4,7 @@
         <div class="d-flex flex-column justify-content-center align-items-center sidebar-top">
 
             <a href="">
-                <img src="./logo/UNY.png" width="60px" alt="">
+                <img src="./logo/Ormanan.SVG" width="100px" alt="">
             </a>
 
         </div>

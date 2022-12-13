@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Transaction;
-use App\Models\User;
 use App\Models\Category;
 use App\Models\Menu;
 use Illuminate\Http\Request;
@@ -17,13 +16,13 @@ class RiwayatController extends Controller
      */
     public function index()
     {
-        $transaction = Transaction::all();
-        $user = User::all();
+        $transaction = Transaction::with('menu')->get();
+
         $category = Category::all();
         $menu = Menu::all();
         return view('RiwayatTransaksi',[
             'transaction' => $transaction,
-            'user' => $user,
+            'menu'  => $menu,
             'category' => $category,
         ]);
     }
@@ -35,10 +34,7 @@ class RiwayatController extends Controller
      */
     public function create()
     {
-        $transaction = Transaction::all();
-        return view('RiwayatTransaksi',[
-            'transaction' => $transaction,
-        ]);
+       
     }
 
     /**

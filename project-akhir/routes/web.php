@@ -50,8 +50,10 @@ Route::resource('menu',MenuWebController::class)->middleware(['auth']);
 Route::resource('HomeDashboard',HomeDashboardController::class)->middleware(['auth']);
 Route::resource('beranda',BerandaController::class)->middleware(['auth']);
 Route::resource('riwayat',RiwayatController::class)->middleware(['auth']);
-Route::resource('payment',PaymentController::class)->middleware(['auth']);
+// Route::resource('payment',PaymentController::class)->middleware(['auth']);
 Route::resource('cart',CartController::class)->middleware(['auth']);
 Route::resource('home',MenuAdminController::class)->middleware(['auth']);
 Route::resource('category',categoryController::class)->middleware(['auth']);
 Route::resource('log',logUserController::class)->middleware(['auth']);
+
+// Route::post('log',[\App\Http\Controller\CartController::class, 'store'])->name(name: 'cart.store');

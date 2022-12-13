@@ -18,17 +18,17 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="logo/1.png" class="d-block w-100" alt="responsive image">
+        <img src="logo/paket1.png" class="d-block w-100" alt="responsive image">
         <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
+          <h5>Telah Hadir Paket Spesial</h5>
+          <p>Cepat Pesan Sebelum Kehabisan</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="logo/2.jpg" class="d-block w-100" alt="responsive image">
+        <img src="logo/jumat.png" class="d-block w-100" alt="responsive image">
         <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Some representative placeholder content for the third slide.</p>
+          <h5>Jumat Berkah</h5>
+          <p>Setiap hari jumat pembelian es teh tidak di pungut biaya.</p>
         </div>
       </div>
     </div>
@@ -41,12 +41,12 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-  <div class="jumbotron jumbotron-fluid">
+  {{-- <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-3">Menu</h1>
       <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
     </div>
-  </div>
+  </div> --}}
   
   
 @endsection

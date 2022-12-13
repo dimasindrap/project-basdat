@@ -26,6 +26,9 @@
             <a href="category" class="sidebar-item" onclick="toggleActive(this)">
                 <img src="./logo/Category.SVG" width="30px" alt="">
             </a>
+            <a href="RiwayatTransaksiAdmin" class="sidebar-item" onclick="toggleActive(this)">
+                <img src="./logo/History.SVG" width="30px" alt="">
+            </a>
 
             
 

@@ -11,13 +11,13 @@
             <div class="mb-3 row">
                 <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name='name' id="name">
+                    <input type="text" class="form-control" name='name' id="name"required>
                 </div>
             </div>
             <div class="mb-3 row">
                 <label for="image" class="col-sm-2 col-form-label">Gambar</label>
                 <div class="col-sm-10">
-                    <input type="file" class="form-control" name='image' id="image">
+                    <input type="file" class="form-control" name='image' id="image" required>
                 </div>
             </div>
             <div class="input-group mb-3">
@@ -41,7 +41,7 @@
             <div class="mb-3 row">
                 <label for="harga" class="col-sm-2 col-form-label">Harga</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name='price' id="price">
+                    <input type="text" class="form-control" name='price' id="price"required>
                 </div>
                 
             <div class="mb-3 row">

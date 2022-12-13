@@ -1,7 +1,8 @@
-@extends('layout.main')
 
-@section('container')
+@extends('layout.admin')
 
+@section('admin_container')
+@include('partial.navbarAdmin')
 
 <table class="table align-middle mb-0 bg-white">
     <thead class="bg-light">

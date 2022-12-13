@@ -10,6 +10,8 @@ use App\Http\Controllers\MenuWebController;
 use App\Http\Controllers\RiwayatController;
 use App\Http\Controllers\HomeDashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RiwayatTransaksiAdminController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -55,5 +57,6 @@ Route::resource('cart',CartController::class)->middleware(['auth']);
 Route::resource('home',MenuAdminController::class)->middleware(['auth']);
 Route::resource('category',categoryController::class)->middleware(['auth']);
 Route::resource('log',logUserController::class)->middleware(['auth']);
+Route::resource('RiwayatTransaksiAdmin',RiwayatTransaksiAdminController::class)->middleware(['auth']);
 
 // Route::post('log',[\App\Http\Controller\CartController::class, 'store'])->name(name: 'cart.store');

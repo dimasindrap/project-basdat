@@ -39,6 +39,7 @@
                                 @csrf
                                 <input type="hidden" name="_method" value="DELETE">
                                 <button class="btn btn-danger btn-sm">Delete</button>
+                            </form>
                         </td>
                     </tr>
                     

@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Models\Transaction;
+use App\Models\Category;
 use App\Models\Menu;
 
-class MenuWebController extends Controller
+class RiwayatTransaksiAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +16,14 @@ class MenuWebController extends Controller
      */
     public function index()
     {
-        $menu = Menu::paginate(5);
-        $category = Category::all();
+        $transaction = Transaction::with('menu')->get();
 
-        return view('menu',[
-        'menu' => $menu,
-            'category' => $category
+        $category = Category::all();
+        $menu = Menu::all();
+        return view('adminpage.RiwayatTransaksiAdmin',[
+            'transaction' => $transaction,
+            'menu'  => $menu,
+            'category' => $category,
         ]);
     }
 

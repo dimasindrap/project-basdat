@@ -13,7 +13,7 @@
   
               <div class="row">
               
-                <dd>{{ $menu }}</dd>
+                {{-- <dd>{{ $menu }}</dd> --}}
                   <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Cart</h3>
   
                   {{-- @foreach($user as $u)

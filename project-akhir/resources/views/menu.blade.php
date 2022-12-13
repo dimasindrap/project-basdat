@@ -38,11 +38,13 @@
                             </div>
                         </div>
                     </div>
-                  
+                   
                     </div>
                 </div>
+               
                 @endforeach 
             </div>
+            {{ $menu ->links() }}
 
             
          {{-- </div> --}}
